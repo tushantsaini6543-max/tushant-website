@@ -1,260 +1,201 @@
 * {
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0f172a;
+    background: #0b1120;
     color: white;
-    transition: 0.3s;
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    padding: 18px 8%;
+header {
+    text-align: center;
+    padding: 60px 20px;
     background: #111827;
 }
 
-nav h2 {
-    margin: 0;
-    color: #60a5fa;
+header h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
 }
 
-.nav-links {
-    margin-left: auto;
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.nav-links a:hover {
-    color: #60a5fa;
-}
-
-.theme-btn {
-    margin-left: 25px;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
+header p {
+    color: #94a3b8;
     font-size: 18px;
 }
 
-.hero {
-    min-height: 85vh;
+nav {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
+    gap: 15px;
+    padding: 20px;
+    background: #020617;
 }
 
-.welcome {
-    color: #60a5fa;
-    letter-spacing: 3px;
-}
-
-.hero h1 {
-    font-size: 55px;
-    margin: 15px 0;
-}
-
-.hero h1 span {
-    color: #60a5fa;
-}
-
-.subtitle {
-    font-size: 22px;
-    color: #94a3b8;
-}
-
-.buttons {
-    margin-top: 25px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 25px;
-    margin: 8px;
+nav button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
     background: #2563eb;
     color: white;
-    text-decoration: none;
-    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.outline {
-    background: transparent;
-    border: 1px solid #2563eb;
+nav button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
 }
 
-section {
-    padding: 80px 8%;
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
     text-align: center;
 }
 
-section h2 {
-    font-size: 35px;
-    margin-bottom: 40px;
+.hidden {
+    display: none;
 }
 
-.card,
-.contact-card,
-.project-card,
-.skill-card {
-    background: #1e293b;
-    border-radius: 15px;
-    padding: 30px;
-}
-
-.card {
-    max-width: 700px;
-    margin: auto;
-}
-
-.skills,
-.projects {
+.stats {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.skill-card {
-    width: 200px;
+.card {
+    width: 220px;
+    padding: 30px;
+    background: #1e293b;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.skill-card span {
-    font-size: 40px;
+.card h3 {
+    color: #cbd5e1;
 }
 
-.project-card {
-    max-width: 350px;
+.card p {
+    font-size: 35px;
+    color: #60a5fa;
+    margin: 10px;
 }
 
-.skill-card:hover,
-.project-card:hover {
-    transform: translateY(-8px);
+.progress {
+    max-width: 600px;
+    height: 25px;
+    margin: 20px auto;
+    background: #1e293b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: #22c55e;
+    transition: 0.5s;
+}
+
+.command-list {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(220px, 1fr)
+    );
+    gap: 20px;
+}
+
+.command-card {
+    padding: 25px;
+    background: #1e293b;
+    border-radius: 12px;
     transition: 0.3s;
 }
 
-.contact-card {
-    max-width: 600px;
-    margin: auto;
+.command-card:hover {
+    transform: translateY(-6px);
+    background: #263449;
 }
 
-.contact-card a {
+.command-card h3 {
     color: #60a5fa;
+    font-family: monospace;
+    font-size: 25px;
+}
+
+.command-card p {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.quiz-card {
+    max-width: 650px;
+    margin: auto;
+    padding: 40px;
+    background: #1e293b;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.quiz-card p:first-child {
+    font-size: 20px;
+}
+
+.quiz-card button {
+    margin: 8px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quiz-card button:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 25px;
+    font-size: 20px;
+    min-height: 25px;
 }
 
 footer {
+    text-align: center;
     padding: 30px;
-    text-align: center;
-    background: #111827;
-    color: #94a3b8;
-}
-
-body.light {
-    background: #f1f5f9;
-    color: #0f172a;
-}
-
-body.light nav,
-body.light footer {
-    background: white;
-}
-
-body.light .nav-links a {
-    color: #0f172a;
-}
-
-body.light .card,
-body.light .contact-card,
-body.light .project-card,
-body.light .skill-card {
-    background: white;
-}
-
-body.light .subtitle {
-    color: #475569;
-}
-
-@media (max-width: 700px) {
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-links {
-        margin-left: 0;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .theme-btn {
-        margin-left: 0;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-#terminal-section {
-    text-align: center;
-}
-
-.terminal-window {
-    max-width: 800px;
-    height: 400px;
-    margin: auto;
     background: #020617;
-    border-radius: 12px;
-    padding: 25px;
-    text-align: left;
-    font-family: monospace;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    color: #94a3b8;
+    margin-top: 40px;
 }
 
-#terminal {
-    height: 330px;
-    overflow-y: auto;
-}
+@media (max-width: 600px) {
 
-.output {
-    color: #22c55e;
-    margin-bottom: 12px;
-}
-
-.command {
-    color: #60a5fa;
-    margin-bottom: 5px;
-}
-
-.terminal-input {
-    display: flex;
-    gap: 10px;
-    color: #22c55e;
-}
-
-.terminal-input input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    font-family: monospace;
-    font-size: 16px;
-}
-    .subtitle {
-        font-size: 18px;
+    header h1 {
+        font-size: 32px;
     }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav button {
+        padding: 10px 18px;
+    }
+
+    .section {
+        padding: 40px 15px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
 }
