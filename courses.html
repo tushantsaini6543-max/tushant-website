@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Linux Administration - Tushant Academy</title>
+    <title>Courses - Tushant Academy</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,217 +13,119 @@
 <body>
 
 <nav>
-
-    <div class="logo">
-        🎓 TUSHANT ACADEMY
-    </div>
+    <div class="logo">🎓 TUSHANT ACADEMY</div>
 
     <div class="nav-links">
-
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
-        <a href="login.html">Login</a>
-
+        <a href="course.html">Learning</a>
     </div>
-
 </nav>
 
+<main class="courses-page">
 
-<main class="course-page">
+    <h1>Explore Courses</h1>
 
-    <div class="course-header">
+    <p class="subtitle">
+        Build real-world technology skills.
+    </p>
 
-        <p>COURSE</p>
+    <div class="course-grid">
 
-        <h1>🐧 Linux Administration</h1>
+        <div class="course-card">
 
-        <p>
-            Learn Linux from beginner to advanced
-            system administration.
-        </p>
+            <div class="course-icon">🐧</div>
 
-        <div class="course-info">
+            <h2>Linux Administration</h2>
 
-            <span>⭐ 4.9</span>
-            <span>📚 24 Lessons</span>
-            <span>⏱️ 12 Hours</span>
+            <p>
+                Linux commands, users, groups,
+                permissions, processes and networking.
+            </p>
+
+            <div class="course-meta">
+                ⭐ 4.9 · 24 Lessons · 12 Hours
+            </div>
+
+            <a href="course.html" class="course-button">
+                Start Learning →
+            </a>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-icon">🌐</div>
+
+            <h2>Web Development</h2>
+
+            <p>
+                HTML, CSS, JavaScript and
+                modern web development.
+            </p>
+
+            <div class="course-meta">
+                ⭐ 4.8 · 30 Lessons
+            </div>
+
+            <button class="course-button">
+                Coming Soon
+            </button>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-icon">🐳</div>
+
+            <h2>Docker</h2>
+
+            <p>
+                Containers, images,
+                Dockerfiles and deployment.
+            </p>
+
+            <div class="course-meta">
+                ⭐ 4.7 · 20 Lessons
+            </div>
+
+            <button class="course-button">
+                Coming Soon
+            </button>
+
+        </div>
+
+
+        <div class="course-card">
+
+            <div class="course-icon">☁️</div>
+
+            <h2>Cloud Fundamentals</h2>
+
+            <p>
+                Servers, networking,
+                storage and cloud computing.
+            </p>
+
+            <div class="course-meta">
+                ⭐ 4.8 · 18 Lessons
+            </div>
+
+            <button class="course-button">
+                Coming Soon
+            </button>
 
         </div>
 
     </div>
 
-
-    <div class="learning-layout">
-
-
-        <aside class="lesson-sidebar">
-
-            <h2>Course Content</h2>
-
-            <div class="lesson active">
-                <span>01</span>
-                Introduction to Linux
-            </div>
-
-            <div class="lesson">
-                <span>02</span>
-                Linux File System
-            </div>
-
-            <div class="lesson">
-                <span>03</span>
-                Basic Commands
-            </div>
-
-            <div class="lesson">
-                <span>04</span>
-                Users & Groups
-            </div>
-
-            <div class="lesson">
-                <span>05</span>
-                File Permissions
-            </div>
-
-            <div class="lesson">
-                <span>06</span>
-                Processes
-            </div>
-
-            <div class="lesson">
-                <span>07</span>
-                Networking
-            </div>
-
-            <div class="lesson">
-                <span>08</span>
-                System Administration
-            </div>
-
-        </aside>
-
-
-        <section class="lesson-content">
-
-            <div class="video-box">
-
-                ▶
-
-            </div>
-
-            <h2>
-                Introduction to Linux
-            </h2>
-
-            <p>
-                Welcome to Linux Administration.
-                In this lesson you will learn what
-                Linux is and why it is widely used
-                in servers and cloud environments.
-            </p>
-
-
-            <div class="progress-container">
-
-                <div class="progress-title">
-
-                    <span>Your Progress</span>
-
-                    <span>12%</span>
-
-                </div>
-
-                <div class="progress-track">
-
-                    <div class="progress-fill"></div>
-
-                </div>
-
-            </div>
-
-
-            <div class="lesson-actions">
-
-                <button>
-                    ← Previous
-                </button>
-
-                <button>
-                    Complete Lesson ✓
-                </button>
-
-                <button>
-                    Next →
-                </button>
-
-            </div>
-
-        </section>
-
-    </div>
-
 </main>
 
-
 <footer>
-
-    <p>
-        © 2026 Tushant Academy
-    </p>
-
+    <p>© 2026 Tushant Academy</p>
 </footer>
 
-<script>
-const lessons = [
-    "Introduction to Linux",
-    "Linux File System",
-    "Basic Commands",
-    "Users & Groups",
-    "File Permissions",
-    "Processes",
-    "Networking",
-    "System Administration"
-];
-
-let currentLesson = 0;
-
-const lessonItems = document.querySelectorAll(".lesson");
-const lessonTitle = document.querySelector(".lesson-content h2");
-const lessonText = document.querySelector(".lesson-content > p");
-const progressFill = document.querySelector(".progress-fill");
-const progressPercent = document.querySelector(".progress-title span:last-child");
-
-function openLesson(index) {
-
-    currentLesson = index;
-
-    lessonItems.forEach(function(item) {
-        item.classList.remove("active");
-    });
-
-    lessonItems[index].classList.add("active");
-
-    lessonTitle.textContent = lessons[index];
-
-    lessonText.textContent =
-        "Welcome to " + lessons[index] +
-        ". Complete this lesson to continue your learning journey.";
-
-    const progress =
-        Math.round((index / (lessons.length - 1)) * 100);
-
-    progressFill.style.width = progress + "%";
-    progressPercent.textContent = progress + "%";
-}
-
-lessonItems.forEach(function(item, index) {
-
-    item.addEventListener("click", function() {
-        openLesson(index);
-    });
-
-});
-</script>
 </body>
-
 </html>
