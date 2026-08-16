@@ -173,6 +173,57 @@
 
 </footer>
 
+<script>
+const lessons = [
+    "Introduction to Linux",
+    "Linux File System",
+    "Basic Commands",
+    "Users & Groups",
+    "File Permissions",
+    "Processes",
+    "Networking",
+    "System Administration"
+];
+
+let currentLesson = 0;
+
+const lessonItems = document.querySelectorAll(".lesson");
+const lessonTitle = document.querySelector(".lesson-content h2");
+const lessonText = document.querySelector(".lesson-content > p");
+const progressFill = document.querySelector(".progress-fill");
+const progressPercent = document.querySelector(".progress-title span:last-child");
+
+function openLesson(index) {
+
+    currentLesson = index;
+
+    lessonItems.forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+    lessonItems[index].classList.add("active");
+
+    lessonTitle.textContent = lessons[index];
+
+    lessonText.textContent =
+        "Welcome to " + lessons[index] +
+        ". Complete this lesson to continue your learning journey.";
+
+    const progress =
+        Math.round((index / (lessons.length - 1)) * 100);
+
+    progressFill.style.width = progress + "%";
+    progressPercent.textContent = progress + "%";
+}
+
+lessonItems.forEach(function(item, index) {
+
+    item.addEventListener("click", function() {
+        openLesson(index);
+    });
+
+});
+</script>
 </body>
 
 </html>
