@@ -208,7 +208,52 @@ body.light .subtitle {
     .hero h1 {
         font-size: 38px;
     }
+#terminal-section {
+    text-align: center;
+}
 
+.terminal-window {
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+    background: #020617;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    font-family: monospace;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+#terminal {
+    height: 330px;
+    overflow-y: auto;
+}
+
+.output {
+    color: #22c55e;
+    margin-bottom: 12px;
+}
+
+.command {
+    color: #60a5fa;
+    margin-bottom: 5px;
+}
+
+.terminal-input {
+    display: flex;
+    gap: 10px;
+    color: #22c55e;
+}
+
+.terminal-input input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+}
     .subtitle {
         font-size: 18px;
     }
