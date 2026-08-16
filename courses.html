@@ -1,85 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tushant Academy - Courses</title>
+
+    <title>Linux Administration - Tushant Academy</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>🎓 Tushant Academy</h1>
-    <p>Explore Our Courses</p>
-</header>
-
 <nav>
-    <a href="index.html">Home</a>
-    <a href="courses.html">Courses</a>
-    <a href="login.html">Login</a>
-    <a href="signup.html">Sign Up</a>
+
+    <div class="logo">
+        🎓 TUSHANT ACADEMY
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="login.html">Login</a>
+
+    </div>
+
 </nav>
 
-<main>
 
-    <section class="courses">
+<main class="course-page">
 
-        <h2>Popular Courses</h2>
+    <div class="course-header">
 
-        <div class="course-grid">
+        <p>COURSE</p>
 
-            <div class="course-card">
-                <div class="course-icon">🐧</div>
-                <h3>Linux Administration</h3>
-                <p>Learn Linux commands, users, permissions and system administration.</p>
-                <p>⭐ 4.9</p>
-                <button onclick="openCourse('Linux Administration')">
-                    View Course
-                </button>
-            </div>
+        <h1>🐧 Linux Administration</h1>
 
-            <div class="course-card">
-                <div class="course-icon">🌐</div>
-                <h3>Web Development</h3>
-                <p>Learn HTML, CSS and JavaScript by building real projects.</p>
-                <p>⭐ 4.8</p>
-                <button onclick="openCourse('Web Development')">
-                    View Course
-                </button>
-            </div>
+        <p>
+            Learn Linux from beginner to advanced
+            system administration.
+        </p>
 
-            <div class="course-card">
-                <div class="course-icon">🐳</div>
-                <h3>Docker</h3>
-                <p>Learn containers, images, Dockerfiles and deployment.</p>
-                <p>⭐ 4.7</p>
-                <button onclick="openCourse('Docker')">
-                    View Course
-                </button>
-            </div>
+        <div class="course-info">
 
-            <div class="course-card">
-                <div class="course-icon">☁️</div>
-                <h3>Cloud Fundamentals</h3>
-                <p>Understand servers, networking, storage and cloud concepts.</p>
-                <p>⭐ 4.8</p>
-                <button onclick="openCourse('Cloud Fundamentals')">
-                    View Course
-                </button>
-            </div>
+            <span>⭐ 4.9</span>
+            <span>📚 24 Lessons</span>
+            <span>⏱️ 12 Hours</span>
 
         </div>
 
-    </section>
+    </div>
+
+
+    <div class="learning-layout">
+
+
+        <aside class="lesson-sidebar">
+
+            <h2>Course Content</h2>
+
+            <div class="lesson active">
+                <span>01</span>
+                Introduction to Linux
+            </div>
+
+            <div class="lesson">
+                <span>02</span>
+                Linux File System
+            </div>
+
+            <div class="lesson">
+                <span>03</span>
+                Basic Commands
+            </div>
+
+            <div class="lesson">
+                <span>04</span>
+                Users & Groups
+            </div>
+
+            <div class="lesson">
+                <span>05</span>
+                File Permissions
+            </div>
+
+            <div class="lesson">
+                <span>06</span>
+                Processes
+            </div>
+
+            <div class="lesson">
+                <span>07</span>
+                Networking
+            </div>
+
+            <div class="lesson">
+                <span>08</span>
+                System Administration
+            </div>
+
+        </aside>
+
+
+        <section class="lesson-content">
+
+            <div class="video-box">
+
+                ▶
+
+            </div>
+
+            <h2>
+                Introduction to Linux
+            </h2>
+
+            <p>
+                Welcome to Linux Administration.
+                In this lesson you will learn what
+                Linux is and why it is widely used
+                in servers and cloud environments.
+            </p>
+
+
+            <div class="progress-container">
+
+                <div class="progress-title">
+
+                    <span>Your Progress</span>
+
+                    <span>12%</span>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div class="progress-fill"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-actions">
+
+                <button>
+                    ← Previous
+                </button>
+
+                <button>
+                    Complete Lesson ✓
+                </button>
+
+                <button>
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
 
 </main>
 
-<script>
-function openCourse(course) {
-    alert("Opening " + course + " course...");
-}
-</script>
+
+<footer>
+
+    <p>
+        © 2026 Tushant Academy
+    </p>
+
+</footer>
 
 </body>
+
 </html>
