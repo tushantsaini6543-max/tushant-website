@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tushant Academy - Courses</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🎓 Tushant Academy</h1>
+    <p>Explore Our Courses</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Sign Up</a>
+</nav>
+
+<main>
+
+    <section class="courses">
+
+        <h2>Popular Courses</h2>
+
+        <div class="course-grid">
+
+            <div class="course-card">
+                <div class="course-icon">🐧</div>
+                <h3>Linux Administration</h3>
+                <p>Learn Linux commands, users, permissions and system administration.</p>
+                <p>⭐ 4.9</p>
+                <button onclick="openCourse('Linux Administration')">
+                    View Course
+                </button>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">🌐</div>
+                <h3>Web Development</h3>
+                <p>Learn HTML, CSS and JavaScript by building real projects.</p>
+                <p>⭐ 4.8</p>
+                <button onclick="openCourse('Web Development')">
+                    View Course
+                </button>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">🐳</div>
+                <h3>Docker</h3>
+                <p>Learn containers, images, Dockerfiles and deployment.</p>
+                <p>⭐ 4.7</p>
+                <button onclick="openCourse('Docker')">
+                    View Course
+                </button>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">☁️</div>
+                <h3>Cloud Fundamentals</h3>
+                <p>Understand servers, networking, storage and cloud concepts.</p>
+                <p>⭐ 4.8</p>
+                <button onclick="openCourse('Cloud Fundamentals')">
+                    View Course
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+function openCourse(course) {
+    alert("Opening " + course + " course...");
+}
+</script>
+
+</body>
+</html>
