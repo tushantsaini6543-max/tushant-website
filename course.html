@@ -4,200 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Linux Administration - Tushant Academy</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        .course-page {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .course-header {
-            background: #111827;
-            color: white;
-            padding: 45px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-        }
-
-        .course-header h1 {
-            font-size: 42px;
-            margin: 15px 0;
-        }
-
-        .course-info {
-            display: flex;
-            gap: 25px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .learning-layout {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 25px;
-        }
-
-        .lesson-sidebar {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .lesson-sidebar h2 {
-            margin-bottom: 20px;
-        }
-
-        .lesson {
-            padding: 15px;
-            margin: 8px 0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .lesson:hover {
-            background: #eff6ff;
-        }
-
-        .lesson.active {
-            background: #2563eb;
-            color: white;
-        }
-
-        .lesson span {
-            font-weight: bold;
-            margin-right: 8px;
-        }
-
-        .lesson-content {
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        .video-box {
-            height: 300px;
-            background: #111827;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 70px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-        }
-
-        .lesson-content h2 {
-            margin-bottom: 15px;
-            font-size: 30px;
-        }
-
-        .lesson-description {
-            color: #64748b;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .progress-container {
-            margin: 30px 0;
-        }
-
-        .progress-title {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .progress-track {
-            height: 14px;
-            background: #e2e8f0;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            width: 0%;
-            background: #2563eb;
-            transition: 0.4s;
-        }
-
-        .lesson-actions {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .lesson-actions button {
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 15px;
-        }
-
-        #completeBtn {
-            background: #16a34a;
-            color: white;
-        }
-
-        .next-btn {
-            background: #2563eb;
-            color: white;
-        }
-
-        .previous-btn {
-            background: #e2e8f0;
-        }
-
-        .completed {
-            color: #16a34a;
-            font-weight: bold;
-        }
-
-        @media (max-width: 800px) {
-            .learning-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .course-header h1 {
-                font-size: 32px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <nav>
-
-    <div class="logo">
-        🎓 TUSHANT ACADEMY
-    </div>
+    <div class="logo">🎓 TUSHANT ACADEMY</div>
 
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="courses.html">Courses</a>
-        <a href="login.html">Login</a>
+        <a href="course.html">Learning</a>
     </div>
-
 </nav>
 
+<main class="learning-page">
 
-<main class="course-page">
+    <section class="course-header">
 
-    <div class="course-header">
-
-        <small>COURSE</small>
+        <span>COURSE</span>
 
         <h1>🐧 Linux Administration</h1>
 
@@ -212,54 +40,45 @@
             <span>⏱️ 12 Hours</span>
         </div>
 
-    </div>
+    </section>
 
 
-    <div class="learning-layout">
-
+    <section class="learning-layout">
 
         <aside class="lesson-sidebar">
 
             <h2>Course Content</h2>
 
             <div class="lesson active" data-index="0">
-                <span>01</span>
-                Introduction to Linux
+                01 · Introduction to Linux
             </div>
 
             <div class="lesson" data-index="1">
-                <span>02</span>
-                Linux File System
+                02 · Linux File System
             </div>
 
             <div class="lesson" data-index="2">
-                <span>03</span>
-                Basic Commands
+                03 · Basic Commands
             </div>
 
             <div class="lesson" data-index="3">
-                <span>04</span>
-                Users & Groups
+                04 · Users & Groups
             </div>
 
             <div class="lesson" data-index="4">
-                <span>05</span>
-                File Permissions
+                05 · File Permissions
             </div>
 
             <div class="lesson" data-index="5">
-                <span>06</span>
-                Processes
+                06 · Processes
             </div>
 
             <div class="lesson" data-index="6">
-                <span>07</span>
-                Networking
+                07 · Networking
             </div>
 
             <div class="lesson" data-index="7">
-                <span>08</span>
-                System Administration
+                08 · System Administration
             </div>
 
         </aside>
@@ -275,11 +94,10 @@
                 Introduction to Linux
             </h2>
 
-            <p class="lesson-description" id="lessonDescription">
-                Welcome to Linux Administration.
-                In this lesson you will learn what Linux is
-                and why it is widely used in servers and
-                cloud environments.
+            <p id="lessonDescription">
+                Learn what Linux is, how Linux works
+                and why Linux is widely used in
+                servers and cloud computing.
             </p>
 
 
@@ -291,10 +109,12 @@
                 </div>
 
                 <div class="progress-track">
+
                     <div
-                        class="progress-fill"
-                        id="progressFill">
+                        id="progressFill"
+                        class="progress-fill">
                     </div>
+
                 </div>
 
             </div>
@@ -303,19 +123,18 @@
             <div class="lesson-actions">
 
                 <button
-                    class="previous-btn"
-                    id="previousBtn">
+                    id="previousBtn"
+                    class="previous-btn">
                     ← Previous
                 </button>
 
-                <button
-                    id="completeBtn">
+                <button id="completeBtn">
                     Complete Lesson ✓
                 </button>
 
                 <button
-                    class="next-btn"
-                    id="nextBtn">
+                    id="nextBtn"
+                    class="next-btn">
                     Next →
                 </button>
 
@@ -323,7 +142,7 @@
 
         </section>
 
-    </div>
+    </section>
 
 </main>
 
@@ -333,217 +152,7 @@
 </footer>
 
 
-<script>
-
-const lessons = [
-
-    {
-        title: "Introduction to Linux",
-        description:
-        "Learn what Linux is, how it works and why Linux is widely used in servers, cloud computing and system administration."
-    },
-
-    {
-        title: "Linux File System",
-        description:
-        "Understand directories such as /etc, /home, /var, /tmp and /usr and learn how Linux organizes files."
-    },
-
-    {
-        title: "Basic Commands",
-        description:
-        "Learn essential commands including pwd, ls, cd, mkdir, touch, cp, mv, rm and cat."
-    },
-
-    {
-        title: "Users & Groups",
-        description:
-        "Learn how Linux manages users and groups and how administrators create and manage accounts."
-    },
-
-    {
-        title: "File Permissions",
-        description:
-        "Understand read, write and execute permissions and learn how chmod and chown work."
-    },
-
-    {
-        title: "Processes",
-        description:
-        "Learn how Linux processes work and how commands such as ps, top and kill are used."
-    },
-
-    {
-        title: "Networking",
-        description:
-        "Learn Linux networking basics including IP addresses, interfaces, routes and useful network commands."
-    },
-
-    {
-        title: "System Administration",
-        description:
-        "Learn essential administration concepts including services, logs, storage and system monitoring."
-    }
-
-];
-
-
-let currentLesson = 0;
-
-let completedLessons =
-    JSON.parse(localStorage.getItem("completedLessons")) || [];
-
-
-const lessonElements =
-    document.querySelectorAll(".lesson");
-
-const title =
-    document.getElementById("lessonTitle");
-
-const description =
-    document.getElementById("lessonDescription");
-
-const progressFill =
-    document.getElementById("progressFill");
-
-const progressPercent =
-    document.getElementById("progressPercent");
-
-const completeBtn =
-    document.getElementById("completeBtn");
-
-
-function showLesson(index) {
-
-    currentLesson = index;
-
-    title.textContent =
-        lessons[index].title;
-
-    description.textContent =
-        lessons[index].description;
-
-
-    lessonElements.forEach(function(item) {
-
-        item.classList.remove("active");
-
-    });
-
-    lessonElements[index]
-        .classList.add("active");
-
-
-    updateProgress();
-
-}
-
-
-function updateProgress() {
-
-    const total =
-        lessons.length;
-
-    const completed =
-        completedLessons.length;
-
-    const percent =
-        Math.round((completed / total) * 100);
-
-
-    progressFill.style.width =
-        percent + "%";
-
-    progressPercent.textContent =
-        percent + "%";
-
-
-    if (completedLessons.includes(currentLesson)) {
-
-        completeBtn.textContent =
-            "✓ Completed";
-
-        completeBtn.classList.add("completed");
-
-    } else {
-
-        completeBtn.textContent =
-            "Complete Lesson ✓";
-
-        completeBtn.classList.remove("completed");
-
-    }
-
-}
-
-
-lessonElements.forEach(function(item) {
-
-    item.addEventListener("click", function() {
-
-        const index =
-            Number(item.dataset.index);
-
-        showLesson(index);
-
-    });
-
-});
-
-
-completeBtn.addEventListener("click", function() {
-
-    if (!completedLessons.includes(currentLesson)) {
-
-        completedLessons.push(currentLesson);
-
-        localStorage.setItem(
-            "completedLessons",
-            JSON.stringify(completedLessons)
-        );
-
-    }
-
-    updateProgress();
-
-});
-
-
-document.getElementById("nextBtn")
-    .addEventListener("click", function() {
-
-        if (currentLesson < lessons.length - 1) {
-
-            showLesson(currentLesson + 1);
-
-        }
-
-    });
-
-
-document.getElementById("previousBtn")
-    .addEventListener("click", function() {
-
-        if (currentLesson > 0) {
-
-            showLesson(currentLesson - 1);
-
-        }
-
-    });
-
-
-document.getElementById("nextBtn")
-    .addEventListener("click", function() {
-
-        if (currentLesson < lessons.length - 1) {
-            showLesson(currentLesson + 1);
-        }
-
-    });
-    updateProgress();
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
