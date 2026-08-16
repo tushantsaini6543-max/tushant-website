@@ -1,162 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tushant | Portfolio</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tushant Linux Lab</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<header>
+
+    <h1>🐧 Tushant Linux Lab</h1>
+
+    <p>
+        Learn Linux • Practice Commands • Earn XP
+    </p>
+
+</header>
+
+
 <nav>
-    <h2>Tushant</h2>
 
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <button onclick="showSection('dashboard')">
+        Dashboard
+    </button>
 
-    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+    <button onclick="showSection('commands')">
+        Commands
+    </button>
+
+    <button onclick="showSection('quiz')">
+        Quiz
+    </button>
+
 </nav>
 
-<section id="home" class="hero">
-    <p class="welcome">WELCOME TO MY WEBSITE</p>
 
-    <h1>Hello, I'm <span>Tushant</span> 👋</h1>
+<main>
 
-    <p class="subtitle">Linux & Web Development Learner</p>
+<!-- DASHBOARD -->
 
-    <div class="buttons">
-        <a href="#projects" class="btn">My Projects</a>
-        <a href="#contact" class="btn outline">Contact Me</a>
+<section id="dashboard" class="section">
+
+    <h2>📊 Dashboard</h2>
+
+    <div class="stats">
+
+        <div class="card">
+
+            <h3>Level</h3>
+
+            <p id="level">1</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>XP</h3>
+
+            <p id="xp">0</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Completed</h3>
+
+            <p id="completed">0</p>
+
+        </div>
+
     </div>
+
+
+    <h3>Progress</h3>
+
+    <div class="progress">
+
+        <div id="progressBar"></div>
+
+    </div>
+
 </section>
 
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>
-            Hello! My name is <b>Tushant</b>.
-            I am learning Linux, HTML, CSS and JavaScript.
-            I created this portfolio while practicing Linux and web development.
-        </p>
-    </div>
-</section>
 
-<section id="skills">
-    <h2>My Skills</h2>
+<!-- COMMANDS -->
 
-    <div class="skills">
-        <div class="skill-card">
-            <span>🐧</span>
-            <h3>Linux</h3>
-            <p>Red Hat Linux & Commands</p>
-        </div>
+<section id="commands"
+         class="section hidden">
 
-        <div class="skill-card">
-            <span>🌐</span>
-            <h3>HTML</h3>
-            <p>Website Structure</p>
-        </div>
+    <h2>💻 Linux Commands</h2>
 
-        <div class="skill-card">
-            <span>🎨</span>
-            <h3>CSS</h3>
-            <p>Website Design</p>
-        </div>
 
-        <div class="skill-card">
-            <span>⚡</span>
-            <h3>JavaScript</h3>
-            <p>Interactive Websites</p>
-        </div>
-    </div>
-</section>
+    <div class="command-list">
 
-<section id="projects">
-    <h2>My Projects</h2>
 
-    <div class="projects">
-        <div class="project-card">
-            <h3>🐧 Linux Practice</h3>
+        <div class="command-card">
+
+            <h3>pwd</h3>
+
             <p>
-                Practicing Linux commands, users, permissions,
-                files and system administration.
+                Shows your current directory.
             </p>
+
         </div>
 
-        <div class="project-card">
-            <h3>🌐 Personal Website</h3>
+
+        <div class="command-card">
+
+            <h3>ls</h3>
+
             <p>
-                My first website created using HTML and CSS
-                and published using GitHub Pages.
+                Lists files and directories.
             </p>
+
         </div>
+
+
+        <div class="command-card">
+
+            <h3>cd</h3>
+
+            <p>
+                Changes the current directory.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>mkdir</h3>
+
+            <p>
+                Creates a new directory.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>touch</h3>
+
+            <p>
+                Creates an empty file.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>cat</h3>
+
+            <p>
+                Displays file contents.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>cp</h3>
+
+            <p>
+                Copies files and directories.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>mv</h3>
+
+            <p>
+                Moves or renames files.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>rm</h3>
+
+            <p>
+                Removes files.
+            </p>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>chmod</h3>
+
+            <p>
+                Changes file permissions.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
 
-<section id="contact">
-    <h2>Contact Me</h2>
 
-    <div class="contact-card">
-        <p>📧 Email:
-            <a href="mailto:Tushantsaini6543@gmail.com">
-                Tushantsaini6543@gamil.com
-            </a>
+<!-- QUIZ -->
+
+<section id="quiz"
+         class="section hidden">
+
+    <h2>🧠 Linux Challenge</h2>
+
+
+    <div class="quiz-card">
+
+        <p id="question">
+
+            Which command shows
+            the current directory?
+
         </p>
 
-        <p>📱 Phone:
-            <a href="tel:+919034858998">
-                +91 9034858998
-            </a>
-        </p>
 
-        <p>📍 Location: India</p>
+        <button onclick="answer('pwd')">
+            pwd
+        </button>
+
+
+        <button onclick="answer('ls')">
+            ls
+        </button>
+
+
+        <button onclick="answer('cd')">
+            cd
+        </button>
+
+
+        <button onclick="answer('mkdir')">
+            mkdir
+        </button>
+
+
+        <p id="result"></p>
+
     </div>
+
 </section>
+
+</main>
+
 
 <footer>
-    <p>© 2026 Tushant. All Rights Reserved.</p>
+
+    <p>
+        © 2026 Tushant Linux Lab
+    </p>
+
 </footer>
 
-<script>
-function toggleTheme() {
-    document.body.classList.toggle("light");
-}
-</script>
 
-<section id="terminal-section">
-
-    <h2>Linux Terminal</h2>
-
-    <div class="terminal-window">
-
-        <div id="terminal">
-            <div class="output">
-                Welcome to Tushant's Linux Terminal.<br>
-                Type <b>help</b> to see available commands.
-            </div>
-        </div>
-
-        <div class="terminal-input">
-            <span>tushant@portfolio:~$</span>
-
-            <input
-                id="commandInput"
-                type="text"
-                autocomplete="off"
-                autofocus
-            >
-        </div>
-
-    </div>
-
-</section>
-
-<script src="script.js"></script></body>
-</html>
 <script src="script.js"></script>
+
+</body>
+
+</html>
