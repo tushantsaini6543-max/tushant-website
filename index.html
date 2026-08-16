@@ -7,274 +7,186 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Tushant Linux Lab</title>
+    <title>Tushant Academy</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="hero">
 
-    <h1>🐧 Tushant Linux Lab</h1>
+    <nav>
 
-    <p>
-        Learn Linux • Practice Commands • Earn XP
-    </p>
+        <div class="logo">
+            🎓 TUSHANT ACADEMY
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="courses.html">Courses</a>
+
+            <a href="login.html">Login</a>
+
+            <a href="signup.html">Sign Up</a>
+
+        </div>
+
+    </nav>
+
+
+    <div class="hero-content">
+
+        <h1>
+            Learn Skills.<br>
+            Build Your Future.
+        </h1>
+
+        <p>
+            Learn Linux, Web Development,
+            Docker and Cloud technologies.
+        </p>
+
+        <a href="courses.html"
+           class="hero-button">
+            Explore Courses
+        </a>
+
+    </div>
 
 </header>
 
 
-<nav>
+<section class="popular">
 
-    <button onclick="showSection('dashboard')">
-        Dashboard
-    </button>
+    <h2>Popular Courses</h2>
 
-    <button onclick="showSection('commands')">
-        Commands
-    </button>
-
-    <button onclick="showSection('quiz')">
-        Quiz
-    </button>
-
-</nav>
+    <div class="course-grid">
 
 
-<main>
+        <div class="course-card">
 
-<!-- DASHBOARD -->
+            <div class="course-icon">
+                🐧
+            </div>
 
-<section id="dashboard" class="section">
-
-    <h2>📊 Dashboard</h2>
-
-    <div class="stats">
-
-        <div class="card">
-
-            <h3>Level</h3>
-
-            <p id="level">1</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>XP</h3>
-
-            <p id="xp">0</p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Completed</h3>
-
-            <p id="completed">0</p>
-
-        </div>
-
-    </div>
-
-
-    <h3>Progress</h3>
-
-    <div class="progress">
-
-        <div id="progressBar"></div>
-
-    </div>
-
-</section>
-
-
-<!-- COMMANDS -->
-
-<section id="commands"
-         class="section hidden">
-
-    <h2>💻 Linux Commands</h2>
-
-
-    <div class="command-list">
-
-
-        <div class="command-card">
-
-            <h3>pwd</h3>
+            <h3>
+                Linux Administration
+            </h3>
 
             <p>
-                Shows your current directory.
+                Learn Linux commands,
+                users, permissions and
+                system administration.
             </p>
+
+            <div class="rating">
+                ⭐ 4.9
+            </div>
+
+            <a href="course.html"
+               class="course-button">
+                View Course
+            </a>
 
         </div>
 
 
-        <div class="command-card">
+        <div class="course-card">
 
-            <h3>ls</h3>
+            <div class="course-icon">
+                🌐
+            </div>
+
+            <h3>
+                Web Development
+            </h3>
 
             <p>
-                Lists files and directories.
+                Learn HTML, CSS and
+                JavaScript by building
+                real projects.
             </p>
+
+            <div class="rating">
+                ⭐ 4.8
+            </div>
+
+            <a href="course.html"
+               class="course-button">
+                View Course
+            </a>
 
         </div>
 
 
-        <div class="command-card">
+        <div class="course-card">
 
-            <h3>cd</h3>
+            <div class="course-icon">
+                🐳
+            </div>
+
+            <h3>
+                Docker
+            </h3>
 
             <p>
-                Changes the current directory.
+                Learn containers,
+                images and deployment.
             </p>
+
+            <div class="rating">
+                ⭐ 4.7
+            </div>
+
+            <a href="course.html"
+               class="course-button">
+                View Course
+            </a>
 
         </div>
 
 
-        <div class="command-card">
+        <div class="course-card">
 
-            <h3>mkdir</h3>
+            <div class="course-icon">
+                ☁️
+            </div>
 
-            <p>
-                Creates a new directory.
-            </p>
-
-        </div>
-
-
-        <div class="command-card">
-
-            <h3>touch</h3>
+            <h3>
+                Cloud Fundamentals
+            </h3>
 
             <p>
-                Creates an empty file.
+                Learn servers, networking,
+                storage and cloud concepts.
             </p>
 
-        </div>
+            <div class="rating">
+                ⭐ 4.8
+            </div>
 
-
-        <div class="command-card">
-
-            <h3>cat</h3>
-
-            <p>
-                Displays file contents.
-            </p>
-
-        </div>
-
-
-        <div class="command-card">
-
-            <h3>cp</h3>
-
-            <p>
-                Copies files and directories.
-            </p>
-
-        </div>
-
-
-        <div class="command-card">
-
-            <h3>mv</h3>
-
-            <p>
-                Moves or renames files.
-            </p>
-
-        </div>
-
-
-        <div class="command-card">
-
-            <h3>rm</h3>
-
-            <p>
-                Removes files.
-            </p>
-
-        </div>
-
-
-        <div class="command-card">
-
-            <h3>chmod</h3>
-
-            <p>
-                Changes file permissions.
-            </p>
+            <a href="course.html"
+               class="course-button">
+                View Course
+            </a>
 
         </div>
 
     </div>
 
 </section>
-
-
-<!-- QUIZ -->
-
-<section id="quiz"
-         class="section hidden">
-
-    <h2>🧠 Linux Challenge</h2>
-
-
-    <div class="quiz-card">
-
-        <p id="question">
-
-            Which command shows
-            the current directory?
-
-        </p>
-
-
-        <button onclick="answer('pwd')">
-            pwd
-        </button>
-
-
-        <button onclick="answer('ls')">
-            ls
-        </button>
-
-
-        <button onclick="answer('cd')">
-            cd
-        </button>
-
-
-        <button onclick="answer('mkdir')">
-            mkdir
-        </button>
-
-
-        <p id="result"></p>
-
-    </div>
-
-</section>
-
-</main>
 
 
 <footer>
 
     <p>
-        © 2026 Tushant Linux Lab
+        © 2026 Tushant Academy
     </p>
 
 </footer>
 
-
-<script src="script.js"></script>
-
 </body>
-
 </html>
