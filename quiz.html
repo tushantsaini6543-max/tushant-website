@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Linux Quiz - Tushant Academy</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+
+<nav>
+
+<div class="logo">
+🎓 TUSHANT ACADEMY
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="courses.html">
+Courses
+</a>
+
+<a href="course.html">
+Learning
+</a>
+
+<a href="quiz.html">
+Quiz
+</a>
+
+</div>
+
+</nav>
+
+
+<main class="quiz-page">
+
+
+<div class="quiz-card">
+
+
+<span>
+🐧 LINUX CHALLENGE
+</span>
+
+
+<h1>
+Linux Administration Quiz
+</h1>
+
+
+<p id="questionNumber">
+Question 1 of 10
+</p>
+
+
+<div class="quiz-progress">
+
+<div id="quizProgress">
+</div>
+
+</div>
+
+
+<h2 id="question">
+Loading...
+</h2>
+
+
+<div id="options">
+</div>
+
+
+<button
+id="nextQuestion"
+class="next-btn">
+
+Next Question →
+
+</button>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+
+const questions = [
+
+
+{
+question:
+"Which command shows the current directory?",
+
+options:
+["ls","pwd","cd","mkdir"],
+
+answer:
+"pwd"
+},
+
+
+{
+question:
+"Which command lists files?",
+
+options:
+["ls","pwd","rm","touch"],
+
+answer:
+"ls"
+},
+
+
+{
+question:
+"Which command changes directory?",
+
+options:
+["mv","cd","cp","cat"],
+
+answer:
+"cd"
+},
+
+
+{
+question:
+"Which command creates a directory?",
+
+options:
+["mkdir","touch","rm","pwd"],
+
+answer:
+"mkdir"
+},
+
+
+{
+question:
+"Which command creates an empty file?",
+
+options:
+["cat","touch","mkdir","cd"],
+
+answer:
+"touch"
+},
+
+
+{
+question:
+"Which command copies a file?",
+
+options:
+["mv","cp","rm","pwd"],
+
+answer:
+"cp"
+},
+
+
+{
+question:
+"Which command removes a file?",
+
+options:
+["rm","cp","mv","ls"],
+
+answer:
+"rm"
+},
+
+
+{
+question:
+"Which command displays file contents?",
+
+options:
+["cat","cd","pwd","mkdir"],
+
+answer:
+"cat"
+},
+
+
+{
+question:
+"Which command changes file permissions?",
+
+options:
+["chmod","chown","passwd","whoami"],
+
+answer:
+"chmod"
+},
+
+
+{
+question:
+"Which command shows running processes?",
+
+options:
+["ps","pwd","mkdir","touch"],
+
+answer:
+"ps"
+}
+
+];
+
+
+let current = 0;
+
+let score = 0;
+
+let answered = false;
+
+
+const question =
+document.getElementById(
+"question"
+);
+
+
+const options =
+document.getElementById(
+"options"
+);
+
+
+const number =
+document.getElementById(
+"questionNumber"
+);
+
+
+const progress =
+document.getElementById(
+"quizProgress"
+);
+
+
+const next =
+document.getElementById(
+"nextQuestion"
+);
+
+
+function loadQuestion() {
+
+
+answered = false;
+
+
+const q =
+questions[current];
+
+
+question.textContent =
+q.question;
+
+
+number.textContent =
+"Question " +
+(current + 1) +
+" of " +
+questions.length;
+
+
+progress.style.width =
+((current + 1) /
+questions.length * 100)
++ "%";
+
+
+options.innerHTML = "";
+
+
+q.options.forEach(
+option => {
+
+
+const button =
+document.createElement(
+"button"
+);
+
+
+button.textContent =
+option;
+
+
+button.className =
+"quiz-option";
+
+
+button.onclick =
+function() {
+
+
+if (answered)
+return;
+
+
+answered = true;
+
+
+if (
+option === q.answer
+) {
+
+button.classList.add(
+"correct"
+);
+
+score++;
+
+} else {
+
+button.classList.add(
+"wrong"
+);
+
+}
+
+
+};
+
+
+options.appendChild(
+button
+);
+
+
+});
+
+
+}
+
+
+next.onclick =
+function() {
+
+
+if (!answered) {
+
+alert(
+"Please select an answer first."
+);
+
+return;
+
+}
+
+
+current++;
+
+
+if (
+current <
+questions.length
+) {
+
+loadQuestion();
+
+} else {
+
+
+document.querySelector(
+".quiz-card"
+).innerHTML = `
+
+<h1>
+🎉 Quiz Complete!
+</h1>
+
+<p>
+Your Score
+</p>
+
+<div class="final-score">
+${score} / ${questions.length}
+</div>
+
+<p>
+
+${
+score >= 7
+?
+"🏆 Excellent! You passed!"
+:
+"Keep practicing and try again!"
+}
+
+</p>
+
+<a
+href="course.html"
+class="course-button">
+
+← Back to Course
+
+</a>
+
+`;
+
+}
+
+};
+
+
+loadQuestion();
+
+</script>
+
+
+</body>
+
+</html>
