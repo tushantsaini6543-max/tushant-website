@@ -533,7 +533,15 @@ document.getElementById("previousBtn")
     });
 
 
-updateProgress();
+document.getElementById("nextBtn")
+    .addEventListener("click", function() {
+
+        if (currentLesson < lessons.length - 1) {
+            showLesson(currentLesson + 1);
+        }
+
+    });
+    updateProgress();
 
 </script>
 
