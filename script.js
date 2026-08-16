@@ -1,109 +1,130 @@
-let xp = 0;
-let completed = 0;
-
-const questions = [
+const lessons = [
     {
-        question: "Which command shows the current directory?",
-        options: ["pwd", "ls", "cd", "mkdir"],
-        answer: "pwd"
+        title: "Introduction to Linux",
+        text: "Learn what Linux is, how it works and why Linux is widely used in servers and cloud computing."
     },
     {
-        question: "Which command lists files?",
-        options: ["cd", "ls", "pwd", "rm"],
-        answer: "ls"
+        title: "Linux File System",
+        text: "Learn about /etc, /home, /var, /usr and other important Linux directories."
     },
     {
-        question: "Which command creates a directory?",
-        options: ["cat", "mkdir", "touch", "pwd"],
-        answer: "mkdir"
+        title: "Basic Commands",
+        text: "Learn pwd, ls, cd, mkdir, touch, cp, mv, rm and cat."
     },
     {
-        question: "Which command creates an empty file?",
-        options: ["touch", "cd", "ls", "mv"],
-        answer: "touch"
+        title: "Users & Groups",
+        text: "Learn how Linux users and groups work and how administrators manage accounts."
+    },
+    {
+        title: "File Permissions",
+        text: "Learn read, write and execute permissions with chmod and chown."
+    },
+    {
+        title: "Processes",
+        text: "Learn ps, top, kill and how Linux manages running processes."
+    },
+    {
+        title: "Networking",
+        text: "Learn IP addresses, interfaces, routes and basic Linux networking commands."
+    },
+    {
+        title: "System Administration",
+        text: "Learn services, logs, storage and system monitoring."
     }
 ];
 
-let currentQuestion = 0;
+let currentLesson = 0;
 
-function showSection(section) {
+let completed =
+    JSON.parse(localStorage.getItem("tushantProgress")) || [];
 
-    document.querySelectorAll(".section").forEach(function(item) {
-        item.classList.add("hidden");
+const lessonButtons = document.querySelectorAll(".lesson");
+const title = document.getElementById("lessonTitle");
+const description = document.getElementById("lessonDescription");
+const progressFill = document.getElementById("progressFill");
+const progressPercent = document.getElementById("progressPercent");
+const completeBtn = document.getElementById("completeBtn");
+const nextBtn = document.getElementById("nextBtn");
+const previousBtn = document.getElementById("previousBtn");
+
+
+function showLesson(index) {
+
+    currentLesson = index;
+
+    title.textContent = lessons[index].title;
+    description.textContent = lessons[index].text;
+
+    lessonButtons.forEach(button => {
+        button.classList.remove("active");
     });
 
-    document.getElementById(section).classList.remove("hidden");
+    lessonButtons[index].classList.add("active");
+
+    updateProgress();
 }
 
-function answer(selected) {
 
-    const question = questions[currentQuestion];
-    const result = document.getElementById("result");
+function updateProgress() {
 
-    if (selected === question.answer) {
+    const percent =
+        Math.round(
+            (completed.length / lessons.length) * 100
+        );
 
-        result.textContent = "✅ Correct! +10 XP";
+    progressFill.style.width = percent + "%";
+    progressPercent.textContent = percent + "%";
 
-        xp += 10;
-        completed++;
-
+    if (completed.includes(currentLesson)) {
+        completeBtn.textContent = "✓ Completed";
     } else {
-
-        result.textContent =
-            "❌ Wrong! Correct answer: " + question.answer;
+        completeBtn.textContent = "Complete Lesson ✓";
     }
-
-    updateDashboard();
-
-    setTimeout(nextQuestion, 1000);
 }
 
-function nextQuestion() {
 
-    currentQuestion++;
+lessonButtons.forEach((button, index) => {
 
-    if (currentQuestion >= questions.length) {
-        currentQuestion = 0;
-    }
-
-    const question = questions[currentQuestion];
-
-    document.getElementById("question").textContent =
-        question.question;
-
-    const buttons =
-        document.querySelectorAll(".quiz-card button");
-
-    buttons.forEach(function(button, index) {
-
-        button.textContent =
-            question.options[index];
-
-        button.onclick = function() {
-            answer(question.options[index]);
-        };
-
+    button.addEventListener("click", () => {
+        showLesson(index);
     });
 
-    document.getElementById("result").textContent = "";
-}
+});
 
-function updateDashboard() {
 
-    document.getElementById("xp").textContent = xp;
+completeBtn.addEventListener("click", () => {
 
-    document.getElementById("completed").textContent =
-        completed;
+    if (!completed.includes(currentLesson)) {
 
-    const level =
-        Math.floor(xp / 30) + 1;
+        completed.push(currentLesson);
 
-    document.getElementById("level").textContent =
-        level;
+        localStorage.setItem(
+            "tushantProgress",
+            JSON.stringify(completed)
+        );
+    }
 
-    const progress =
-        Math.min(xp, 100);
+    updateProgress();
 
-    document.getElementById("progressBar").style.width =
-        progress + "%";
-}
+});
+
+
+nextBtn.addEventListener("click", () => {
+
+    if (currentLesson < lessons.length - 1) {
+        showLesson(currentLesson + 1);
+    }
+
+});
+
+
+previousBtn.addEventListener("click", () => {
+
+    if (currentLesson > 0) {
+        showLesson(currentLesson - 1);
+    }
+
+});
+
+
+updateProgress();
