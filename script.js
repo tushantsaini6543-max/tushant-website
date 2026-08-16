@@ -43,6 +43,7 @@ function answer(selected) {
     if (selected === question.answer) {
 
         result.textContent = "✅ Correct! +10 XP";
+
         xp += 10;
         completed++;
 
@@ -62,7 +63,6 @@ function nextQuestion() {
     currentQuestion++;
 
     if (currentQuestion >= questions.length) {
-
         currentQuestion = 0;
     }
 
@@ -102,7 +102,7 @@ function updateDashboard() {
         level;
 
     const progress =
-        Math.min((xp / 100) * 100, 100);
+        Math.min(xp, 100);
 
     document.getElementById("progressBar").style.width =
         progress + "%";
