@@ -1,162 +1,109 @@
-* {
-    box-sizing: border-box;
+let xp = 0;
+let completed = 0;
+
+const questions = [
+    {
+        question: "Which command shows the current directory?",
+        options: ["pwd", "ls", "cd", "mkdir"],
+        answer: "pwd"
+    },
+    {
+        question: "Which command lists files?",
+        options: ["cd", "ls", "pwd", "rm"],
+        answer: "ls"
+    },
+    {
+        question: "Which command creates a directory?",
+        options: ["cat", "mkdir", "touch", "pwd"],
+        answer: "mkdir"
+    },
+    {
+        question: "Which command creates an empty file?",
+        options: ["touch", "cd", "ls", "mv"],
+        answer: "touch"
+    }
+];
+
+let currentQuestion = 0;
+
+function showSection(section) {
+
+    document.querySelectorAll(".section").forEach(function(item) {
+        item.classList.add("hidden");
+    });
+
+    document.getElementById(section).classList.remove("hidden");
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1120;
-    color: white;
-}
+function answer(selected) {
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: #111827;
-}
+    const question = questions[currentQuestion];
+    const result = document.getElementById("result");
 
-header h1 {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
+    if (selected === question.answer) {
 
-header p {
-    color: #94a3b8;
-    font-size: 18px;
-}
+        result.textContent = "✅ Correct! +10 XP";
+        xp += 10;
+        completed++;
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-    background: #020617;
-}
+    } else {
 
-nav button {
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    cursor: pointer;
-}
-
-nav button:hover {
-    background: #1d4ed8;
-}
-
-.section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.hidden {
-    display: none;
-}
-
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    width: 220px;
-    padding: 30px;
-    background: #1e293b;
-    border-radius: 15px;
-}
-
-.card p {
-    font-size: 35px;
-    color: #60a5fa;
-}
-
-.progress {
-    max-width: 600px;
-    height: 25px;
-    margin: 20px auto;
-    background: #1e293b;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-#progressBar {
-    width: 0%;
-    height: 100%;
-    background: #22c55e;
-    transition: 0.5s;
-}
-
-.command-list {
-    display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-
-    gap: 20px;
-}
-
-.command-card {
-    padding: 25px;
-    background: #1e293b;
-    border-radius: 12px;
-}
-
-.command-card h3 {
-    color: #60a5fa;
-    font-family: monospace;
-    font-size: 25px;
-}
-
-.quiz-card {
-    max-width: 650px;
-    margin: auto;
-    padding: 40px;
-    background: #1e293b;
-    border-radius: 15px;
-}
-
-.quiz-card button {
-    margin: 8px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    cursor: pointer;
-}
-
-.quiz-card button:hover {
-    background: #1d4ed8;
-}
-
-#result {
-    margin-top: 25px;
-    font-size: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #020617;
-    color: #94a3b8;
-}
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 32px;
+        result.textContent =
+            "❌ Wrong! Correct answer: " + question.answer;
     }
 
-    nav {
-        flex-wrap: wrap;
+    updateDashboard();
+
+    setTimeout(nextQuestion, 1000);
+}
+
+function nextQuestion() {
+
+    currentQuestion++;
+
+    if (currentQuestion >= questions.length) {
+
+        currentQuestion = 0;
     }
 
-    .section {
-        padding: 40px 15px;
-    }
+    const question = questions[currentQuestion];
+
+    document.getElementById("question").textContent =
+        question.question;
+
+    const buttons =
+        document.querySelectorAll(".quiz-card button");
+
+    buttons.forEach(function(button, index) {
+
+        button.textContent =
+            question.options[index];
+
+        button.onclick = function() {
+            answer(question.options[index]);
+        };
+
+    });
+
+    document.getElementById("result").textContent = "";
+}
+
+function updateDashboard() {
+
+    document.getElementById("xp").textContent = xp;
+
+    document.getElementById("completed").textContent =
+        completed;
+
+    const level =
+        Math.floor(xp / 30) + 1;
+
+    document.getElementById("level").textContent =
+        level;
+
+    const progress =
+        Math.min((xp / 100) * 100, 100);
+
+    document.getElementById("progressBar").style.width =
+        progress + "%";
 }
